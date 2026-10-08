@@ -77,7 +77,7 @@ const CONFIG = {
   FURRY_GAP_WIDTH: 48,
 
   // ── Telegram channel subscription gate ──
-  SUBSCRIPTION_REQUIRED: true,
+  SUBSCRIPTION_REQUIRED: false,
   SUBSCRIPTION_CHANNEL_USERNAME: '@VoidGiftsOfficial',
   SUBSCRIPTION_CHANNEL_URL: 'https://t.me/VoidGiftsOfficial',
   // Expected response: { "subscribed": true|false }.
@@ -1622,18 +1622,6 @@ const Utils = {
 
 // Standalone TON on-chain payment backend (ton-payments.js). Fully
 // independent of vgtserver (gift transactor) and vgservers (Stars invoices).
-const TON_API_BASE = 'https://ton-backend347-production.up.railway.app';
-const INVOICE_API_BASE = 'https://vgservers-production.up.railway.app'; // main bot: /create-invoice, /stars/claim-credits, /check-subscription
-
-// VGDataStorage — Postgres-backed service that also holds the shared
-// users table (profile + coins/stars) the global leaderboard reads from.
-const DATA_STORE_URL = 'https://vgdatastorage-production.up.railway.app';
-
-// Gift Relayer (V2) — replaces the deprecated vgtserver /claim-gift.
-// Verifies Telegram initData itself and sends/transfers gifts from the
-// @VoidGift_Relayer user account. Point this at wherever gift-relayer.js
-// is deployed.
-const GIFT_RELAYER_URL = 'https://vgrelayer-production.up.railway.app';
 
 const STATUS_CONFIG = {
   URL: 'https://raw.githubusercontent.com/sn0wydev/VGDevBranch/main/status.json',
